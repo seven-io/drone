@@ -1,0 +1,27 @@
+kind: pipeline
+type: docker
+name: default
+
+workspace:
+  base: /go
+  path: src/github.com/sms77io/drone
+
+steps:
+  - name: sms77_sms
+    image: sms77io/drone
+    settings:
+      api_key:
+        from_secret: api_key
+      flash: 1
+      from: DroneCI
+      text: example text
+      to: +13134378004
+  - name: sms77_voice
+    image: sms77io/drone
+    settings:
+      api_key:
+        from_secret: api_key
+      from: +447449241777
+      text: example text
+      to: +13134378004
+      type: voice
