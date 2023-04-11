@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sms77io/go-client/sms77api"
+	"github.com/seven-io/go-client/sms77api"
 )
 
 func main() {
 	clientOptions := sms77api.Options{
 		ApiKey: os.Getenv("PLUGIN_API_KEY"),
 	}
-	sms77 := sms77api.New(clientOptions)
+	seven := sms77api.New(clientOptions)
 	from := os.Getenv("PLUGIN_FROM")
 	text := os.Getenv("PLUGIN_TEXT")
 	to := os.Getenv("PLUGIN_TO")
@@ -27,7 +27,7 @@ func main() {
 			Text:  text,
 			To:    to,
 		}
-		resp, _err := sms77.Voice.Json(params)
+		resp, _err := seven.Voice.Json(params)
 		err = _err
 		fmt.Println("Voice sent:", resp)
 	} else {
@@ -39,7 +39,7 @@ func main() {
 			To:    to,
 		}
 
-		resp, _err := sms77.Sms.Json(params)
+		resp, _err := seven.Sms.Json(params)
 		err = _err
 		fmt.Println("SMS sent:", resp)
 	}
@@ -51,6 +51,7 @@ func main() {
 }
 
 func parseBool(name string) bool {
-	value := os.Getenv("PLUGIN_" + name)
+	key := fmt.Sprintf("PLUGIN_%s", name)
+	value := os.Getenv(key)
 	return "1" == value || "true" == value
 }

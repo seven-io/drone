@@ -1,4 +1,4 @@
 FROM alpine
-ADD drone-sms77 /bin/
+ADD drone-seven /bin/
 RUN apk -Uuv add ca-certificates
-ENTRYPOINT /bin/drone-sms77
+ENTRYPOINT /bin/drone-seven

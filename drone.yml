@@ -4,11 +4,11 @@ name: default
 
 workspace:
   base: /go
-  path: src/github.com/sms77io/drone
+  path: src/github.com/seven-io/drone
 
 steps:
-  - name: sms77_sms
-    image: sms77io/drone
+  - name: seven_sms
+    image: seven-io/drone
     settings:
       api_key:
         from_secret: api_key
@@ -16,8 +16,8 @@ steps:
       from: DroneCI
       text: example text
       to: +13134378004
-  - name: sms77_voice
-    image: sms77io/drone
+  - name: seven_voice
+    image: seven-io/drone
     settings:
       api_key:
         from_secret: api_key
