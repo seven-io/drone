@@ -16,23 +16,20 @@ func main() {
 	text := os.Getenv("PLUGIN_TEXT")
 	to := os.Getenv("PLUGIN_TO")
 	typ := os.Getenv("PLUGIN_TYPE")
-	debug := parseBool("DEBUG")
 
 	var err error
 
 	if typ == "voice" {
 		params := sms77api.VoiceParams{
-			Debug: debug,
-			From:  from,
-			Text:  text,
-			To:    to,
+			From: from,
+			Text: text,
+			To:   to,
 		}
 		resp, _err := seven.Voice.Json(params)
 		err = _err
 		fmt.Println("Voice sent:", resp)
 	} else {
 		params := sms77api.SmsBaseParams{
-			Debug: debug,
 			Flash: parseBool("FLASH"),
 			From:  from,
 			Text:  text,

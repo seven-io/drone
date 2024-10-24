@@ -17,7 +17,6 @@ Send SMS or make text-to-speech calls.
   image: seven-io/drone
   settings:
     api_key: my_seven_api_key
-    debug: 0
     flash: 1
     from: Drone CI
     text: Drone CI has finished!
@@ -33,7 +32,6 @@ Required settings:
 
 Optional settings:
 
-* debug: if enabled, API validates inputs but messages don't get sent
 * flash: send as flash SMS (SMS only)
 * from: sender identifier up to 11 alphanumeric (SMS only) or 16 numeric characters - must be a verified number or a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/)
 * type: must be either "voice" or "sms" (defaults to "sms")

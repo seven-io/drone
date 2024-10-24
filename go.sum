@@ -9,6 +9,7 @@ github.com/gorilla/schema v1.1.0/go.mod h1:kgLaKoK1FELgZqMAVxx/5cbj0kT+57qxUrAlI
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.2/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/seven-io/go-client v0.0.0-20211026080708-90d592e387a5/go.mod h1:Z4Gf/PUrT5wam9ugP7VI/p2CgNVkwHJtj1wEV6Aeo1c=
 github.com/sfreiberg/gotwilio v0.0.0-20200424172909-47a95c1c632a h1:xIN4cNSGhMfu9iD/tJx8pJMYkLxNWH95Lm286xtsU34=
 github.com/sfreiberg/gotwilio v0.0.0-20200424172909-47a95c1c632a/go.mod h1:dhtsjtHOWmTLjCOyNloce1diOIs9H1mvVmcOG7qmZUc=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
