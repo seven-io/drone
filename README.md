@@ -1,43 +1,66 @@
-<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
+<p align="center">
+  <img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" alt="seven logo" />
+</p>
 
+<h1 align="center">seven SMS &amp; Voice for Drone CI</h1>
 
-# seven Plugin for Drone.io CI
+<p align="center">
+  Send SMS or place text-to-speech calls from <a href="https://www.drone.io/">Drone CI</a> pipelines via the seven gateway.
+</p>
 
-Send SMS or make text-to-speech calls.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-teal.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Drone-CI-fc4a1a" alt="Drone CI" />
+  <img src="https://img.shields.io/badge/Docker-image-2496ed" alt="Docker image" />
+</p>
+
+---
+
+## Features
+
+- **Drone Plugin** - Drop-in pipeline step using the `seven-io/drone` Docker image
+- **SMS or Voice** - Switch between message types via the `type` setting
+- **Flash SMS** - Optional flash messages that bypass the inbox
 
 ## Prerequisites
 
-- An API Key from seven - can be created in your [developer dashboard](https://app.seven.io/developer)
-- [Drone CI](https://www.drone.io/)
+- A [Drone CI](https://www.drone.io/) installation
+- A [seven account](https://www.seven.io/) with API key ([How to get your API key](https://help.seven.io/en/developer/where-do-i-find-my-api-key))
 
 ## Usage
 
-```yml
+```yaml
 - name: seven
   image: seven-io/drone
   settings:
     api_key: my_seven_api_key
-    flash: 1
-    from: Drone CI
-    text: Drone CI has finished!
-    to: +491716992343
-    type: sms
+    flash:   1
+    from:    Drone CI
+    text:    Drone CI has finished!
+    to:      +491716992343
+    type:    sms
 ```
 
-Required settings:
+### Required settings
 
-* api_key
-* text
-* to
+| Setting | Description |
+|---------|-------------|
+| `api_key` | Your seven API key |
+| `text` | Message body |
+| `to` | Recipient phone number |
 
-Optional settings:
+### Optional settings
 
-* flash: send as flash SMS (SMS only)
-* from: sender identifier up to 11 alphanumeric (SMS only) or 16 numeric characters - must be a verified number or a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/)
-* type: must be either "voice" or "sms" (defaults to "sms")
+| Setting | Description |
+|---------|-------------|
+| `from` | Sender ID. Up to 11 alphanumeric (SMS) or 16 numeric characters. Must be a verified number or a [shared number](https://www.seven.io/en/docs/glossary/shared-numbers/) |
+| `flash` | Send as flash SMS (SMS only) |
+| `type` | `sms` (default) or `voice` |
 
 ## Support
 
-Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/) or [open an issue](https://github.com/seven-io/drone/issues).
 
-[![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
+## License
+
+[MIT](LICENSE)
